@@ -1,0 +1,29 @@
+<% provide(:title, "Radar") %>
+
+<div>
+  <h1>Dragon Ball Radar</h1>
+</div>
+
+<div style='width: 800px; height: 150px;'>
+  <div class='background' style='width: 1000px; height: 830px;'></div>
+</div>
+
+<div style='width: 960px; height: 650px;'>
+  <div id="map" class='container' style='width: 580px; height: 588px;'></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 34.091187, lng: -118.234708};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzyYERNByx84K--l-_ZRgAROV1rI48OH4&callback=initMap">
+    </script>
+</div>
